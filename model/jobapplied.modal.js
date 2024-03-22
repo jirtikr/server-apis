@@ -31,6 +31,9 @@ const jobappliedSchema = new Schema({
     time:{
         type:String,
     },
+    resume:{
+        type:String,
+    },
 });
 
 const jobappliedModel = db.model('jobapplied',jobappliedSchema);

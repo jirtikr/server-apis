@@ -21,3 +21,15 @@ exports.getalljob = async(req,res,next)=>{
         res.json({status:false,sucess:"server error controller register"});
     }
 }
+
+
+exports.updatejob = async(req,res,next)=>{
+    try{
+        const {id,title,des,salary} = req.body;
+        await jobService.updatejob(id,title,des,salary);
+        res.status(200).json({status:true});
+    } catch (e){
+        console.log(e)
+        res.json({status:false});
+    }
+}

@@ -19,6 +19,15 @@ class jobService{
             res.json({status:false,sucess:"server error service register"});
         }
    }
+
+   static async updatejob(id,title,des,salary){
+    try{
+        return await jobmodel.findByIdAndUpdate(id,{title:title,des:des,salary:salary});
+    } catch(e){
+        console.log(e)
+        res.json({status:false,sucess:"server error service register"});
+    }
+}
 }
  
 module.exports = jobService;
